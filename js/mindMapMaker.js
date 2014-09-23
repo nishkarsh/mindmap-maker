@@ -2,10 +2,6 @@
  * Created by nishkarshsharma on 15/09/14.
  */
 
-function checkKeyCode() {
-    alert("hiiiii");
-}
-
 function updateJSON(spaceTree) {
     //alert(JSON.stringify(spaceTree.toJSON()));
     document.getElementById("jsonInput").value=JSON.stringify(spaceTree.toJSON('tree'));
@@ -28,6 +24,14 @@ function assignLabel(node, newLabel)
         decoratedLabel = decoratedLabel + "<br><img src='"+node.data.icon+"' height='"+ getIconHeight(node) +"' width='"+ getIconWidth(node) +"'>";
     }
     return decoratedLabel;
+}
+
+function changeLabel(node,newLabel) {
+    node.name = newLabel;
+    label=st.labels.getLabel(node.id);
+    label.innerHTML = assignLabel(node, node.name);
+    updateJSON(st);
+    st.onClick(node.id);
 }
 
 function hasLink(node)  {

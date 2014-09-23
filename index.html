@@ -7,14 +7,16 @@
     <script src="js/jsonData.js"></script>
     <script src="js/jit.js"></script>
     <script src="js/jit-yc.js"></script>
+    <script src="js/multiSpaceTree.js"></script>
+    <script src="js/mindMapMaker.js"></script>
+    <script src="js/shortcut.js"></script>
+    <script src="js/myShortcuts.js"></script>
     <link rel="stylesheet" href="css/spacetree.css">
 </head>
 <body onLoad="init();">
-<script src="js/multiSpaceTree.js"></script>
-<script src="js/mindMapMaker.js"></script>
 <div style="display:inline-block">
-    <textarea id="jsonInput" onkeyup="updateMindMap(this.value);" rows="53" cols="45"></textarea>
+    <textarea id="jsonInput" tabindex="-1" onkeyup="updateMindMap(this.value);" rows="53" cols="45"></textarea>
 </div>
-<div id="infovis" style="display:inline-block;height:700px;width:1000px;margin:auto;border:1px  dashed black"></div>
+<div id="infovis" style="display:inline-block;height:700px;width:1000px;margin:auto;border:1px  dashed #8ba619"></div>
 </body>
 </html>

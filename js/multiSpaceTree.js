@@ -3,6 +3,7 @@
  */
 
 var labelType, useGradients, nativeTextSupport, animate, selectedNode;
+var st; //SpaceTree Variable
 
 (function() {
     var ua = navigator.userAgent,
@@ -18,8 +19,6 @@ var labelType, useGradients, nativeTextSupport, animate, selectedNode;
     useGradients = nativeCanvasSupport;
     animate = !(iStuff || !nativeCanvasSupport);
 })();
-
-var st; //SpaceTree Variable
 
 function init(){
     //alert(document.getElementById("jsonInput").value=JSON.stringify(json));
@@ -64,7 +63,7 @@ function init(){
         Node: {
             autoWidth: true,
             autoHeight: true,
-            type: 'rectangle',
+            type: 'ellipse',
             color: '#fff',
             overridable: true,
             //set canvas specific styles
@@ -89,20 +88,7 @@ function init(){
             label.innerHTML = assignLabel(node,node.name);
             label.onclick = function(){
                st.onClick(node.id);
-            };
-
-            label.ondblclick = function editLabel() {
-                label.innerHTML="<input type=text style='border:0px;' id=nodeLabel value='"+node.name+"'>";
-            }
-
-            label.onkeydown= function changeLabel(event) {
-                if(event.keyCode==13) {
-                    var newLabel=$jit.id("nodeLabel").value;
-                    node.name=newLabel;
-                    label.innerHTML= assignLabel(node,node.name);
-                    updateJSON(st);
-                    st.onClick(node.id);
-                }
+               selectedNode=node;
             }
 
             //set label styles
@@ -112,8 +98,8 @@ function init(){
             style.cursor = 'pointer';
             style.color = '#333';
             style.textAlign = 'center';
-            style.padding = '4px';
-            style.lineHeight = '1.25';
+            style.padding = '8px';
+            style.lineHeight = '1.6';
         },
 
         //This method is called right before plotting
@@ -128,7 +114,7 @@ function init(){
                 node.data.$color = "#75A9FF";
             }
             else {
-                delete node.data.$color;
+                 node.data.$color = "#8BA619";
                 }
         },
 
