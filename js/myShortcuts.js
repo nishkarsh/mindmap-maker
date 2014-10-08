@@ -58,10 +58,26 @@
             st.select(firstParent.id);
             selectedNode = firstParent;
         }
-        else {
+        else if(selectedNode.data.$orn=="left") {
             var firstChild = selectedNode.getSubnodes()[1];
             st.select(firstChild.id);
             selectedNode = firstChild;
+        }
+        else {
+            //The code below is just for selecting nodes on right(left) when
+            //the root node is selected
+            var found_first=false; //found the first node with $orn=left?
+            var nextNode; //next to be selected node
+
+            //go through each 'just' subnode and select the first one with
+            //$orn as right
+            selectedNode.eachSubnode(function(node) {
+                if(node.data.$orn=='left' && found_first==false){
+                    found_first=true;
+                    st.select(node.id);
+                    selectedNode=node;
+                }
+            });
         }
     },{
         'type':'keydown',
@@ -193,11 +209,11 @@
     shortcut.add("Shift+Left",function() {
         if(selectedNode.getParents()[0].id==st.root) {
             selectedNode.data.$orn="right";
-            selectedNode.eachSubnode(function(node){
+            selectedNode.eachSubgraph(function(node){
                node.data.$orn="right";
             });
         }
-        else {
+        else if(selectedNode.data.$orn=="left"){
             var parent=selectedNode.getParents()[0];
             var grandParent=selectedNode.getParents()[0].getParents()[0];
             st.graph.removeAdjacence(selectedNode.id,parent.id);
@@ -216,9 +232,17 @@
     shortcut.add("Shift+Right",function() {
         if(selectedNode.getParents()[0].id==st.root) {
             selectedNode.data.$orn="left";
-            selectedNode.eachSubnode(function(node){
+            selectedNode.eachSubgraph(function(node){
                 node.data.$orn="left";
             });
+        }
+        else if(selectedNode.data.$orn=="right") {
+            var parent=selectedNode.getParents()[0];
+            var grandParent=selectedNode.getParents()[0].getParents()[0];
+            st.graph.removeAdjacence(selectedNode.id,parent.id);
+            st.graph.addAdjacence(selectedNode,grandParent);
+            st.plot();
+            st.refresh();
         }
         updateJSON(st);
         st.refresh();

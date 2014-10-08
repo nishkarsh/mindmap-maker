@@ -55,3 +55,12 @@ function getIconHeight(node) {
 function getIconWidth(node) {
     return (node.data.iconWidth != undefined) ? node.data.iconWidth : 50;
 }
+
+function reinit() {
+    json=parse();
+    initOrn();
+    st.loadJSON(json);
+    st.plot();
+    st.refresh();
+    $jit.id("jsonInput").innerHTML=JSON.stringify(json);
+}

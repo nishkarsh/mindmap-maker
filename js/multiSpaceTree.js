@@ -20,8 +20,8 @@ var st; //SpaceTree Variable
     animate = !(iStuff || !nativeCanvasSupport);
 })();
 
-function init(){
-    //alert(document.getElementById("jsonInput").value=JSON.stringify(json));
+
+function initOrn() {
     //preprocess subtrees orientation
     var arr = json.children, len = arr.length;
     for(var i=0; i < len; i++) {
@@ -40,6 +40,11 @@ function init(){
         }
     }
     //end
+}
+
+function init(){
+    //alert(document.getElementById("jsonInput").value=JSON.stringify(json));
+    initOrn();
 
     //init Spacetree
     //Create a new ST instance
@@ -49,20 +54,22 @@ function init(){
         //multitree
         multitree: true,
         //set duration for the animation
-        duration: 50,
+        duration: 0,
         //set animation transition type
         transition: $jit.Trans.Quart.easeInOut,
         //set distance between node and its children
-        levelDistance: 40,
+        levelDistance: 30,
+        levelsToShow: 5,
         //sibling and subtrees offsets
-        siblingOffset: 3,
-        subtreeOffset: 3,
+        siblingOffset: 5,
+        subtreeOffset: 5,
         //set node and edge styles
         //set overridable=true for styling individual
         //nodes or edges
         Node: {
             autoWidth: true,
             autoHeight: true,
+            padding: '10',
             type: 'ellipse',
             color: '#fff',
             overridable: true,
@@ -70,13 +77,13 @@ function init(){
             //like shadows
             CanvasStyles: {
                 shadowColor: '#ccc',
-                shadowBlur: 2
+                shadowBlur: 1
             }
         },
         Edge: {
             type: 'bezier',
             lineWidth: 2,
-            color:'#23A4FF',
+            color:'black',
             overridable: true
         },
 
@@ -98,8 +105,9 @@ function init(){
             style.cursor = 'pointer';
             style.color = '#333';
             style.textAlign = 'center';
-            style.padding = '8px';
-            style.lineHeight = '1.6';
+            style.padding = '0px';
+            style.lineHeight = '0.8';
+            style.textDecoration = 'underline';
         },
 
         //This method is called right before plotting
@@ -111,11 +119,17 @@ function init(){
             //add some color to the nodes in the path between the
             //root node and the selected node.
             if (node.selected) {
-                node.data.$color = "#75A9FF";
+                node.data.$color = "#ccc";
+                node.data.$type = "rectangle";
             }
             else {
-                 node.data.$color = "#8BA619";
-                }
+                delete node.data.$color;
+                node.data.$type = "none";
+            }
+            if(node.id == st.root) {
+                node.data.$color = "#fff";
+                node.data.$type="ellipse";
+            }
         },
 
         //This method is called right before plotting
@@ -132,6 +146,13 @@ function init(){
                 delete adj.data.$color;
                 delete adj.data.$lineWidth;
             }
+        },
+
+        onComplete: function(){
+            $("#node1").css("line-height","2");
+            $("#node1").css("background","#ccc");
+            $("#node1").css("height",$("#node1").css("height")+10+"px");
+            $("#node1").css("width",$("#node1").css("width")+10+"px");
         }
     });
     //load json data

@@ -9149,7 +9149,7 @@ $jit.ST.Group = new Class({
         var that = this;
 
         nodes = this.prepare(nodes);
-        this.animation.setOptions($.merge(controller, {
+        /*this.animation.setOptions($.merge(controller, {
             $animating: false,
             compute: function(delta) {
               if(delta == 1) delta = 0.99;
@@ -9160,7 +9160,7 @@ $jit.ST.Group = new Class({
             complete: function() {
                 that.hide(nodes, controller);
             }       
-        })).start();
+        })).start();*/
     },
     
     hide: function(nodes, controller) {

@@ -2,7 +2,7 @@
  * Created by nishkarshsharma on 15/09/14.
  */
 
-var json = {
+/*var json = {
     id: "node0",
     name: "ThoughtWorks",
     data: {
@@ -34,4 +34,4 @@ var json = {
             children: []
         }
     ]
-};
+};*/
