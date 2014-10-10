@@ -56,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jit.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="jit.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/jit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.591133" vertical-offset="140805" max-vertical-offset="257355">
-              <caret line="9432" column="39" selection-start-line="9432" selection-start-column="39" selection-end-line="9432" selection-end-column="39" />
+            <state vertical-scroll-proportion="-14.730769" vertical-offset="144862" max-vertical-offset="257355">
+              <caret line="9704" column="18" selection-start-line="9704" selection-start-column="18" selection-end-line="9704" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -69,8 +69,8 @@
       <file leaf-file-name="mindMapMaker.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/mindMapMaker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="490" max-vertical-offset="1155">
-              <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1155">
+              <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multiSpaceTree.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="multiSpaceTree.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/multiSpaceTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2685">
-              <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.4566929" vertical-offset="2035" max-vertical-offset="2670">
+              <caret line="155" column="14" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -129,15 +129,15 @@
         <option value="$PROJECT_DIR$/js/text2json.js" />
         <option value="$PROJECT_DIR$/css/spacetree.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/jit.js" />
         <option value="$PROJECT_DIR$/js/mindMapMaker.js" />
         <option value="$PROJECT_DIR$/js/multiSpaceTree.js" />
-        <option value="$PROJECT_DIR$/js/jit.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="377" />
-    <option name="y" value="66" />
+    <option name="x" value="382" />
+    <option name="y" value="45" />
     <option name="width" value="946" />
     <option name="height" value="768" />
   </component>
@@ -303,7 +303,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="377" y="66" width="946" height="768" extended-state="0" />
+    <frame x="382" y="45" width="946" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -551,26 +551,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/jit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.730769" vertical-offset="144862" max-vertical-offset="257355">
+          <caret line="9704" column="18" selection-start-line="9704" selection-start-column="18" selection-end-line="9704" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/mindMapMaker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="490" max-vertical-offset="1155">
-          <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1155">
+          <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/multiSpaceTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="2685">
-          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.591133" vertical-offset="140805" max-vertical-offset="257355">
-          <caret line="9432" column="39" selection-start-line="9432" selection-start-column="39" selection-end-line="9432" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.4566929" vertical-offset="2035" max-vertical-offset="2670">
+          <caret line="155" column="14" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
           <folding />
         </state>
       </provider>

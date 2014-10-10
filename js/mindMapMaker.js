@@ -68,5 +68,5 @@ function reinit() {
 //override JIT default node alignment behaviour
 function modifyPosition(node) {
     //the alignment of node should be same as the orientation
-    return node.data.$orn!=undefined?node.data.$orn:'right';
+    return node.data.$orn!=undefined?node.data.$orn:'center';
 }
