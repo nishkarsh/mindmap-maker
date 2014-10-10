@@ -51,7 +51,7 @@ function init(){
     st = new $jit.ST({
         //id of viz container element
         injectInto: 'infovis',
-        //multitree
+        //multitree,
         multitree: true,
         //set duration for the animation
         duration: 0,
@@ -59,10 +59,10 @@ function init(){
         transition: $jit.Trans.Quart.easeInOut,
         //set distance between node and its children
         levelDistance: 30,
-        levelsToShow: 5,
+        align: 'bottom',
         //sibling and subtrees offsets
-        siblingOffset: 5,
-        subtreeOffset: 5,
+        siblingOffset: 3,
+        subtreeOffset: 3,
         //set node and edge styles
         //set overridable=true for styling individual
         //nodes or edges
@@ -72,6 +72,8 @@ function init(){
             padding: '10',
             type: 'ellipse',
             color: '#fff',
+            lineWidth: 2,
+            align: 'right',
             overridable: true,
             //set canvas specific styles
             //like shadows
@@ -116,8 +118,6 @@ function init(){
         //The data properties prefixed with a dollar
         //sign will override the global node style properties.
         onBeforePlotNode: function(node){
-            //add some color to the nodes in the path between the
-            //root node and the selected node.
             if (node.selected) {
                 node.data.$color = "#ccc";
                 node.data.$type = "rectangle";
@@ -129,7 +129,12 @@ function init(){
             if(node.id == st.root) {
                 node.data.$color = "#fff";
                 node.data.$type="ellipse";
+                node.data.$width=node.data.$width+10;
+                node.data.$height=node.data.$height+10;
             }
+
+            var colors= ["#ccc","#867","#972","#112","#412","#213"];
+            node.data.$color= colors[node._depth];
         },
 
         //This method is called right before plotting
@@ -151,8 +156,11 @@ function init(){
         onComplete: function(){
             $("#node1").css("line-height","2");
             $("#node1").css("background","#ccc");
-            $("#node1").css("height",$("#node1").css("height")+10+"px");
-            $("#node1").css("width",$("#node1").css("width")+10+"px");
+            $("#node1").css("border-radius","20px");
+            $("#node1").css("font-size",18);
+            $("#node1").css("padding",5);
+            //$("#node1").css("height",parseInt($("#node1").css("height")));
+            //$("#node1").css("width",parseInt($("#node1").css("width")));
         }
     });
     //load json data

@@ -9096,7 +9096,7 @@ $jit.ST.$extend = true;
 $jit.ST.Op = new Class({
 
   Implements: Graph.Op
-    
+
 });
 
 /*
@@ -9429,6 +9429,9 @@ $jit.ST.Geom = new Class({
         var w = node.getData('width');
         var h = node.getData('height');
 
+        //modifying the position of edges according to the orn of nodes
+        dim.align=modifyPosition(node);
+
         if(type == 'begin') {
             if(dim.align == "center") {
                 return this.dispatch(s, $C(0, h/2), $C(-w/2, 0),
@@ -9472,6 +9475,10 @@ $jit.ST.Geom = new Class({
             return node.pos.add(new Complex(a, b)).$scale(1 - scale);
           }; 
         };
+
+        //modifying the position of nodes
+        dim.align=modifyPosition(node);
+
         if(dim.align == "left") {
             return this.dispatch(s, $C(0, h), $C(0, 0),
                                  $C(0, 0), $C(w, 0));
@@ -9693,6 +9700,9 @@ $jit.ST.Label.DOM = new Class({
             sy = canvas.scaleOffsetY,
             posx = pos.x * sx + ox,
             posy = pos.y * sy + oy;
+
+        //modifying the position of label according to the orn of node
+        dim.align=modifyPosition(node);
 
         if(dim.align == "center") {
             labelPos= {

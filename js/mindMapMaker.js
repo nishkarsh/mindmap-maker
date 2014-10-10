@@ -21,7 +21,7 @@ function assignLabel(node, newLabel)
         decoratedLabel = "<a href='" + node.data.href + "'>" + newLabel + "</a>";
     }
     if(hasIcon(node))   {
-        decoratedLabel = decoratedLabel + "<br><img src='"+node.data.icon+"' height='"+ getIconHeight(node) +"' width='"+ getIconWidth(node) +"'>";
+        decoratedLabel = decoratedLabel + " <i class='"+node.data.icon+"' height='"+ getIconHeight(node) +"' width='"+ getIconWidth(node) +"'></i>";
     }
     return decoratedLabel;
 }
@@ -63,4 +63,10 @@ function reinit() {
     st.plot();
     st.refresh();
     $jit.id("jsonInput").innerHTML=JSON.stringify(json);
+}
+
+//override JIT default node alignment behaviour
+function modifyPosition(node) {
+    //the alignment of node should be same as the orientation
+    return node.data.$orn!=undefined?node.data.$orn:'right';
 }
