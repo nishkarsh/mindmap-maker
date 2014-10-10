@@ -26,6 +26,3 @@ SHIFT + -> = just opposite of above
 
 CTRL+S = saves the current mind map to update the json shown in the text area
 
---------------------------------------------------
-PS: and i know it needs a lot of refactoring :P
---------------------------------------------------
