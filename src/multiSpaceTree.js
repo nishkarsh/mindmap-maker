@@ -70,7 +70,7 @@ function init(){
             autoWidth: true,
             autoHeight: true,
             padding: '10',
-            type: 'none',
+            type: 'rectangle',
             color: '#fff',
             lineWidth: 2,
             align: 'right',
@@ -96,8 +96,8 @@ function init(){
             label.id = node.id;
             label.innerHTML = assignLabel(node,node.name);
             label.onclick = function(){
-               st.onClick(node.id);
                selectedNode=node;
+               st.select(node.id);
             }
 
             //set label styles
@@ -120,7 +120,7 @@ function init(){
         onBeforePlotNode: function(node){
             if (node.selected) {
                 //node.data.$color = "#ccc";
-                //node.data.$type = "rectangle";
+                node.data.$type = "rectangle";
             }
             else {
                 delete node.data.$color;
