@@ -70,10 +70,10 @@ function init(){
             autoWidth: true,
             autoHeight: true,
             padding: '10',
-            type: 'rectangle',
+            type: 'ellipse',
             color: '#fff',
             lineWidth: 2,
-            align: 'right',
+            align: 'center',
             overridable: true,
             //set canvas specific styles
             //like shadows
@@ -119,7 +119,7 @@ function init(){
         //sign will override the global node style properties.
         onBeforePlotNode: function(node){
             if (node.selected) {
-                //node.data.$color = "#ccc";
+                node.data.$color = "#ccc";
                 node.data.$type = "rectangle";
             }
             else {
@@ -127,9 +127,11 @@ function init(){
                 node.data.$type = "none";
             }
             if(node.id == st.root) {
-                //node.data.$color = "#fff";
-                //node.data.$width=node.data.$width+10;
-                //node.data.$height=node.data.$height+10;
+                node.data.$type = "ellipse";
+                node.data.$color = "#fff";
+
+                node.data.$width=node.data.$width+10;
+                node.data.$height=node.data.$height+10;
             }
 
             //var colors= ["#ccc","#867","#972","#112","#412","#213"];
@@ -153,13 +155,13 @@ function init(){
         },
 
         onComplete: function(){
-            /*$("#node1").css("line-height","2");
+            $("#node1").css("line-height","2");
             $("#node1").css("background","#ccc");
             $("#node1").css("border-radius","20px");
-            $("#node1").css("font-size",18);
+            //$("#node1").css("font-size",22);
             $("#node1").css("padding",5);
             //$("#node1").css("height",parseInt($("#node1").css("height")));
-            //$("#node1").css("width",parseInt($("#node1").css("width")));*/
+            //$("#node1").css("width",parseInt($("#node1").css("width")));
         }
     });
     //load json data
