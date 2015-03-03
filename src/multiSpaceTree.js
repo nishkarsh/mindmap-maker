@@ -130,11 +130,11 @@ function init(){
                 node.data.$type = "ellipse";
                 node.data.$color = "#fff";
 
-                node.data.$width=node.data.$width+10;
-                node.data.$height=node.data.$height+10;
+                node.data.$width=node.data.$width+8;
+                node.data.$height=node.data.$height+15;
             }
 
-            var colors= ["#ccc","yellow","orange","lightblue","lightbrown","#412","#213"];
+            var colors= ["#ccc","yellow","orange","lightblue","red","pink","lightgreen"];
             node.data.$color= colors[node._depth];
         },
 
