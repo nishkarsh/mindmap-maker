@@ -107,8 +107,8 @@ function init(){
             style.cursor = 'pointer';
             style.color = '#333';
             style.textAlign = 'center';
-            style.padding = '0px';
-            style.lineHeight = '0.8';
+            style.padding = '1px';
+            style.lineHeight = '1.1';
             style.textDecoration = 'underline';
         },
 
@@ -134,8 +134,8 @@ function init(){
                 node.data.$height=node.data.$height+10;
             }
 
-            //var colors= ["#ccc","#867","#972","#112","#412","#213"];
-            //node.data.$color= colors[node._depth];
+            var colors= ["#ccc","yellow","orange","lightblue","lightbrown","#412","#213"];
+            node.data.$color= colors[node._depth];
         },
 
         //This method is called right before plotting

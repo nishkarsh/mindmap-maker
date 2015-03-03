@@ -32,6 +32,7 @@ function changeLabel(node,newLabel) {
     label.innerHTML = assignLabel(node, node.name);
     updateJSON(st);
     st.onClick(node.id);
+    st.select(node.id);
 }
 
 function hasLink(node)  {
