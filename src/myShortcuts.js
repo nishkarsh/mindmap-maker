@@ -11,7 +11,7 @@
             editingActive = true;
             var label=st.labels.getLabel(selectedNode.id);
             oldLabel=label.innerHTML;
-            label.innerHTML = "<input type=text style='border:0px;' id=nodeLabel value='"+selectedNode.name+"'>";
+            label.innerHTML = "<input type=text style='border:0px;width:68px;' id=nodeLabel value='"+selectedNode.name+"'>";
             $jit.id("nodeLabel").select();
         }
     }

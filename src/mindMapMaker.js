@@ -3,12 +3,10 @@
  */
 
 function updateJSON(spaceTree) {
-    //alert(JSON.stringify(spaceTree.toJSON()));
     document.getElementById("jsonInput").value=JSON.stringify(spaceTree.toJSON('tree'));
 }
 
 function updateMindMap(updatedJSONString) {
-    //alert(updatedJSONString);
     var updatedJSON=JSON.parse(updatedJSONString);
     st.loadJSON(updatedJSON);
     st.refresh();

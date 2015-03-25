@@ -69,7 +69,7 @@ function init(){
         Node: {
             autoWidth: true,
             autoHeight: true,
-            padding: '10',
+            padding: '1',
             type: 'ellipse',
             color: '#fff',
             lineWidth: 2,
@@ -108,8 +108,8 @@ function init(){
             style.color = '#333';
             style.textAlign = 'center';
             style.padding = '1px';
-            style.lineHeight = '1.1';
-            style.textDecoration = 'underline';
+            style.lineHeight = '0.5';
+            style.borderBottom = '2px solid black';
         },
 
         //This method is called right before plotting
