@@ -12,6 +12,8 @@ thejit - Javascript infovis Toolkit library has been used for visualization.
 
 *The space tree has been used as a visualization and its a multitree.
 
+Try it out here: http://nishkarsh.github.io/mindmap-maker/html/
+
 keyboard shortcuts
 --------------------
 CTRL+D = Delete a subtree along with its children
